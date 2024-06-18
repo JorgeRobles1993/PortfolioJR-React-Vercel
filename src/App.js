@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import MyWork from './MyWork';
+import AboutMe from './AboutMe';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="video-background">
+        <video autoPlay loop muted>
+          <source src="/Videofondo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div className="section" id="home">
+        <div className="content">
+          <h1>Jorge Joan Robles</h1>
+          <h2>Junior Web Developer</h2>
+          <div className="buttons">
+            <button onClick={() => document.getElementById('my-work').scrollIntoView({ behavior: 'smooth' })}>My Work</button>
+            <button onClick={() => document.getElementById('about-me').scrollIntoView({ behavior: 'smooth' })}>About Me</button>
+          </div>
+        </div>
+      </div>
+      <div id="my-work" className="section">
+        <MyWork />
+      </div>
+      <div id="about-me" className="section">
+        <AboutMe />
+      </div>
     </div>
   );
 }
