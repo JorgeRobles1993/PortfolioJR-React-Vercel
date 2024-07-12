@@ -63,17 +63,18 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .buttons button {
-  background-color: rgba(82, 3, 208, 0.9); /* Red-orange background for visibility */
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid #fff; /* Borde blanco */
+  color: #fff; /* Texto blanco */
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
   border-radius: 5px;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .buttons button:hover {
@@ -196,7 +197,7 @@
   }
 }
 
-/* src/components/AboutMe.css */
+/* src/AboutMe.css */
 
 .about-me {
   text-align: center;
@@ -204,62 +205,186 @@
 }
 
 .about-me h2 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px #000000; /* Sombra de texto */
+  -webkit-text-stroke: 1px black; /* Contorno del texto */
 }
 
 .profile {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.profile img {
-  width: 200px;
-  height: 200px;
+.profile-pic {
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
 
-.contact-links {
-  margin-top: 3rem;
+.profile h3 {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  text-align: left;
+  text-shadow: 1px 1px 2px #000000; /* Sombra de texto */
 }
 
-.contact-links h3 {
+.contact-links a {
+  color: #fff; /* Color del texto del enlace */
+  text-decoration: none; /* Quitar subrayado */
+}
+
+.contact-links a:hover {
+  color: #ddd; /* Color del texto del enlace al pasar el ratón */
+}
+
+.contact-links h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px #000000; /* Sombra de texto */
+  -webkit-text-stroke: 1px black; /* Contorno del texto */
 }
+
+/* Estilos para los enlaces visitados */
+.contact-links a:visited {
+  color: #fff; /* Mantiene el color del enlace después de hacer clic */
+}
+
+/* Estilos para los enlaces activos (cuando se está haciendo clic en ellos) */
+.contact-links a:active {
+  color: #ddd; /* Color del texto del enlace al hacer clic */
+}
+
 
 .links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 1rem;
 }
 
-.links a {
-  color: white;
-  text-decoration: none;
+.link-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 1.5rem; /* Ajusta el tamaño de fuente de los íconos */
 }
 
-.links a i {
-  font-size: 3rem; /* Ajusta el tamaño de los íconos */
+.social-icon {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
 }
 
-.resume img {
-  width: 50px;
-  height: 50px;
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.resume-icon {
+  width: 100px;
+  height: 100px;
   margin-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.resume-icon:hover {
+  transform: scale(1.1);
+}
+
+.link-text {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px #000000; /* Sombra de texto */
+}
+
+.language-buttons {
+  margin-bottom: 2rem; /* Espacio entre los botones y el título */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.language-buttons button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.resume img:hover {
-  transform: scale(1.1); /* Efecto de escala al hacer hover */
+.language-buttons button:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Efecto de brillo al pasar el mouse */
 }
 
-.fab{
+/* Oculta los botones que no están en uso */
+.hidden {
+  display: none;
+}
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-me h2 {
+    font-size: 2.5rem;
+  }
+
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-links h2 {
+    font-size: 1.5rem;
+  }
+
+  .social-icon,
+  .resume-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me h2 {
+    font-size: 2rem;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile h3 {
+    font-size: 0.9rem;
+  }
+
+  .contact-links h2 {
+    font-size: 1.2rem;
+  }
+
+  .social-icon,
+  .resume-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .links {
+    gap: 0.5rem; /* Reduce el espacio entre los íconos en pantallas muy pequeñas */
+  }
 }
