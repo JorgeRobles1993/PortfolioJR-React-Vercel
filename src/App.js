@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import MyWork from './MyWork';
 import AboutMe from './AboutMe';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   return (
